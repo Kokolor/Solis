@@ -44,7 +44,7 @@ void initTerminal(TERMINAL_STATE *terminal, FRAMEBUFFER *framebuffer, PSF1_FONT 
 {
     terminal->cursorX = 0;
     terminal->cursorY = 0;
-    terminal->colour = 0x00009f3b;
+    terminal->colour = 0xffffffff;
     terminal->font = psfFont;
     terminal->framebuffer = framebuffer;
 }
@@ -88,9 +88,10 @@ void putString(TERMINAL_STATE *terminal, char *str)
 
 void _start(FRAMEBUFFER *framebuffer, PSF1_FONT *psfFont)
 {
-    TERMINAL_STATE *terminal;
-    initTerminal(terminal, framebuffer, psfFont);
-    putString(terminal, "Welcome to Solis!\n");
+    TERMINAL_STATE terminal;
+    initTerminal(&terminal, framebuffer, psfFont);
+    terminal.colour = 0xffffff;
+    putString(&terminal, "Welcome to Solis!\n");
 
     while (1)
         ;

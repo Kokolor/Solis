@@ -105,46 +105,6 @@ FRAMEBUFFER* initGop(){
 	
 }
 
-// void putPixel(int x, int y, uint32_t color)
-// {
-//     EFI_GRAPHICS_OUTPUT_BLT_PIXEL pixel;
-
-//     pixel.Red = (UINT8)((color >> 16) & 0xFF);
-//     pixel.Green = (UINT8)((color >> 8) & 0xFF);
-//     pixel.Blue = (UINT8)(color & 0xFF);
-//     pixel.Reserved = 0;
-
-//     EFI_STATUS status = uefi_call_wrapper(
-//         gop->Blt,
-//         10,
-//         gop,
-//         &pixel,
-//         EfiBltBufferToVideo,
-//         0,
-//         0,
-//         x,
-//         y,
-//         1,
-//         1,
-//         0);
-
-//     if (EFI_ERROR(status))
-//     {
-//         Print(L"Failed to color the pixel\n");
-//     }
-// }
-
-// void putRectangle(int x, int y, int width, int height, uint32_t color)
-// {
-//     for (int i = y; i < y + height; i++)
-//     {
-//         for (int _i = x; _i < x + width; _i++)
-//         {
-//             putPixel(_i, i, color);
-//         }
-//     }
-// }
-
 EFI_STATUS LoadPSF1Font(EFI_FILE_PROTOCOL *Root, CHAR16 *Path, PSF1_FONT *font)
 {
     EFI_STATUS Status;

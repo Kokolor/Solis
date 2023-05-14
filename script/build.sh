@@ -50,6 +50,7 @@ cd ../kernel/
 ./build.sh
 cd ../src/
 sudo cp ../kernel/kernel.elf mnt/
+sudo cp -r mnt/* /mnt
 sudo umount mnt/
 sudo losetup -d /dev/loop0
 qemu-system-x86_64 -machine q35 -drive if=pflash,format=raw,readonly,file=/usr/share/edk2/x64/OVMF.fd -drive format=raw,file=solis.img
