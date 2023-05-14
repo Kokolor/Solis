@@ -1,6 +1,7 @@
 #include <efi.h>
 #include <efilib.h>
 #include <elf.h>
+#include <stddef.h>
 
 #define MAX_ENTRIES 10
 
